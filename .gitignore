@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+*.joblib
+.pytest_cache/
+.mypy_cache/
+
+# Model artifacts
+backend/models/*
+!backend/models/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env.local
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs
+*.log

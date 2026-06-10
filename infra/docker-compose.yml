@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../data:/app/data
+      - ../backend/models:/app/backend/models
+    environment:
+      - DATA_CSV_PATH=data/credit_risk_dataset_new.csv
+      - MACRO_XLSX_PATH=data/US_Macro_Economic_Stress_Test_Data.xlsx
+      - MODEL_DIR=backend/models
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../infra/Dockerfile.frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
