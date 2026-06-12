@@ -177,6 +177,4 @@ fix(api): handle missing model artifacts on predict
 docs: add stress test usage to README
 ```
 
-## License
 
-MIT (educational use)
